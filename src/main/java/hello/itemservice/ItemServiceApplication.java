@@ -10,11 +10,12 @@ import org.springframework.context.annotation.Profile;
 
 /**
  * scanBasePackages = hello.itemservice.web 패키지 하위 파일들만 컴포넌트 스캔
- * 컨트롤러에서 Service, Repository에 의존하기 때문에 자동주입이 되지않는다.
+ * 컨트롤러에서 Service, Repository 에 의존하기 때문에 자동주입이 되지않는다.
  * MemoryConfig 설정파일로 수동으로 빈으로 등록
  */
 
-@Import(MemoryConfig.class)
+//@Import(MemoryConfig.class)
+@Import(JdbcTemplateV1Config.class)
 @SpringBootApplication(scanBasePackages = "hello.itemservice.web")
 public class ItemServiceApplication {
 
