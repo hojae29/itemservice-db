@@ -9,9 +9,9 @@ import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Profile;
 
 /**
- * scanBasePackages = hello.itemservice.web 패키지 하위 파일들만 컴포넌트 스캔
+ * scanBasePackages = hello.itemservice.web 패키지 하위 파일만 컴포넌트 스캔
  * 컨트롤러에서 Service, Repository 에 의존하기 때문에 자동주입이 되지않는다.
- * MemoryConfig 설정파일로 수동으로 빈으로 등록
+ * @Import 어노테이션 사용해서 직접 빈으로 등록하면 설정파일 내 빈들로 의존성 주입이 된다.
  */
 
 //@Import(MemoryConfig.class)
