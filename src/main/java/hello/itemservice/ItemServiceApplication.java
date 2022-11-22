@@ -14,8 +14,7 @@ import org.springframework.context.annotation.Profile;
  * @Import 어노테이션 사용해서 직접 빈으로 등록하면 설정파일 내 빈들로 의존성 주입이 된다.
  */
 
-//@Import(MemoryConfig.class)
-@Import(JdbcTemplateV1Config.class)
+@Import(JdbcTemplateV3Config.class)
 @SpringBootApplication(scanBasePackages = "hello.itemservice.web")
 public class ItemServiceApplication {
 
