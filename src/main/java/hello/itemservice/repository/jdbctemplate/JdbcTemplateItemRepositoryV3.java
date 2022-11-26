@@ -82,19 +82,21 @@ public class JdbcTemplateItemRepositoryV3 implements ItemRepository {
         if (StringUtils.hasText(itemName) || maxPrice != null) {
             sql += " where";
         }
+
         boolean andFlag = false;
         if (StringUtils.hasText(itemName)) {
             sql += " item_name like concat('%',:itemName,'%')";
             andFlag = true;
         }
+
         if (maxPrice != null) {
             if (andFlag) {
                 sql += " and";
             }
-            sql += " price <= :price";
+            sql += " price <= :maxPrice";
         }
-        log.info("sql={}", sql);
 
+        log.info("sql={}", sql);
         return template.query(sql, param, itemRowMapper());
     }
 
