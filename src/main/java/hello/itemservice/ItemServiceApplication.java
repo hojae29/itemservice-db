@@ -1,5 +1,6 @@
 package hello.itemservice;
 
+import hello.itemservice.config.JpaConfig;
 import hello.itemservice.config.MyBatisConfig;
 import hello.itemservice.repository.ItemRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -15,7 +16,8 @@ import org.springframework.context.annotation.Profile;
  * @Import 어노테이션 사용해서 직접 빈으로 등록하면 설정파일 내 빈들로 의존성 주입이 된다.
  */
 @Slf4j
-@Import(MyBatisConfig.class)
+//@Import(MyBatisConfig.class)
+@Import(JpaConfig.class)
 @SpringBootApplication(scanBasePackages = "hello.itemservice.web")
 public class ItemServiceApplication {
 
